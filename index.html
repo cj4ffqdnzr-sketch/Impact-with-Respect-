@@ -12,6 +12,8 @@
     --navy2:   #111F30;
     --navy3:   #162842;
     --orange:  #F97316;
+    --yellow:  #F4D03F;
+    --black:   #1a1a1a;
     --white:   #FFFFFF;
     --grey:    #8A9BB0;
     --light:   #D4DDE8;
@@ -46,7 +48,11 @@
     display:flex; align-items:center;
   }
   nav .inner { display:flex; align-items:center; justify-content:space-between; width:100%; }
-  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .cboost-logo-svg {
+    width:40px; height:40px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
   .logo-badge {
     width:36px; height:36px; border-radius:8px;
     background:linear-gradient(135deg,var(--orange),#c2410c);
@@ -223,7 +229,16 @@
 <nav>
   <div class="container inner">
     <a class="logo" href="#">
-      <div class="logo-badge">C</div>
+      <!-- Cboost Logo SVG -->
+      <svg class="cboost-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Yellow parallelogram (top left) -->
+        <polygon points="0,0 30,0 40,15 10,15" fill="#F4D03F"/>
+        <!-- Black stripes pattern -->
+        <line x1="15" y1="20" x2="0" y2="40" stroke="#000" stroke-width="2"/>
+        <line x1="22" y1="20" x2="7" y2="40" stroke="#000" stroke-width="2"/>
+        <!-- Black rectangle (bottom) -->
+        <polygon points="5,42 35,42 35,52 5,52" fill="#000"/>
+      </svg>
       <div class="logo-text">C<span>boost</span> StepGuard</div>
     </a>
     <ul>
@@ -301,12 +316,12 @@
         <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">🏗️</span>
           <div class="card-title">Savings for operators</div>
-          <p class="card-body">Public transport operators, airports and shopping centres benefit from lower downtime costs and fewer emergency call-outs — savings reinvestable directly into local transport infrastructure.</p>
+          <p class="card-body">Public transport operators, airports and shopping centres benefit from lower downtime costs and fewer emergency call-outs — savings reinvestable directly into local infrastructure.</p>
         </div>
         <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">⚙️</span>
           <div class="card-title">OEM market disruption</div>
-          <p class="card-body">Dominant OEMs (Schindler, KONE, ThyssenKrupp) earn large revenues from reactive maintenance. StepGuard compresses that cycle, incentivising the entire sector to innovate toward preventive models.</p>
+          <p class="card-body">Dominant OEMs (Schindler, KONE, ThyssenKrupp) earn large revenues from reactive maintenance. StepGuard compresses that cycle, incentivising the entire sector to innovate.</p>
         </div>
         <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">🏭</span>
@@ -316,7 +331,7 @@
         <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">👷</span>
           <div class="card-title">Job creation</div>
-          <p class="card-body">Phase 3 scale-up will require a German service centre, generating direct local employment. Indirect effects include growing demand for data-literate maintenance technicians across the sector.</p>
+          <p class="card-body">Phase 3 scale-up will require a German service centre, generating direct local employment. Indirect effects include growing demand for data-literate maintenance technicians.</p>
         </div>
       </div>
     </div>
@@ -332,12 +347,12 @@
       <div class="reveal">
         <div class="section-eyebrow" style="color:#60A5FA">02 — Social Impact</div>
         <h2 class="section-title">Safer cities. Fairer workplaces. Inclusive infrastructure.</h2>
-        <p class="section-lead">Escalators are a critical infrastructure need for elderly and mobility-impaired users. StepGuard's predictive model directly improves public safety and accessibility across Germany.</p>
+        <p class="section-lead">Escalators are a critical infrastructure need for elderly and mobility-impaired users. StepGuard's predictive model directly improves public safety and accessibility.</p>
         <div class="sdg-row">
           <div class="sdg-badge sdg11"><span class="num">11</span> Sustainable Cities &amp; Communities</div>
         </div>
         <div class="quote">
-          On <strong>12 March 2026</strong>, over <strong>50 escalators</strong> broke down simultaneously at Berlin Central Station — a direct impact on thousands of commuters, wheelchair users and people with reduced mobility. <em>(Euronews, 2026)</em>
+          On <strong>12 March 2026</strong>, over <strong>50 escalators</strong> broke down simultaneously at Berlin Central Station — a direct impact on thousands of commuters, wheelchair users, and the elderly.</span>
         </div>
       </div>
       <div class="vis-panel reveal">
@@ -345,21 +360,21 @@
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">♿</div>
           <div class="vis-text">
             <h4>Public safety &amp; accessibility</h4>
-            <p>Escalators are critical infrastructure for elderly and mobility-impaired users in metro stations and shopping centres. However, escalator reliability in Germany is currently below the standard level. StepGuard's predictive maintenance model directly and positively impacts public safety and accessibility for a large number of users — preventing the kind of simultaneous failures that took Berlin Central Station offline in March 2026.</p>
+            <p>Escalators are critical infrastructure for elderly and mobility-impaired users in metro stations and shopping centres. However, escalator reliability in Germany is currently below industry standards.</p>
           </div>
         </div>
         <div class="vis-row">
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">🔧</div>
           <div class="vis-text">
             <h4>Impact for maintenance technicians</h4>
-            <p>With StepGuard, the role of maintenance technicians is helped tremendously — shifting from reactive emergency work to planned predictive maintenance. The system also creates demand for data-literate maintenance professionals who can interpret AI-generated alerts. StepGuard should engage with German trade unions and position itself as a tool that improves working conditions by providing quicker insights into the causes of malfunctions.</p>
+            <p>With StepGuard, the role of maintenance technicians is helped tremendously — shifting from reactive emergency work to planned predictive maintenance. The system creates demand for skilled roles.</p>
           </div>
         </div>
         <div class="vis-row">
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">🔍</div>
           <div class="vis-text">
             <h4>Digital inclusion</h4>
-            <p>Because StepGuard will be used by large public transport operators, the technology needs to be understandable in order to maintain social legitimacy. The platform is therefore designed in a transparent and explainable way so that operators understand <em>why</em> the system triggers an alert — not only that it does. This builds public trust in an increasingly AI-powered infrastructure.</p>
+            <p>Because StepGuard will be used by large public transport operators, the technology is designed to be understandable to maintain social legitimacy. The platform is user-centric by design.</p>
           </div>
         </div>
       </div>
@@ -375,8 +390,8 @@
     <div class="two-col">
       <div class="reveal">
         <div class="section-eyebrow" style="color:#4ADE80">03 — Ecological Impact</div>
-        <h2 class="section-title">Extending asset life. Cutting waste. Aligned with NCES.</h2>
-        <p class="section-lead">Preventive maintenance is a circular economy tool — fewer replacements, less aluminium and steel consumed, and a measurably smaller carbon footprint per escalator, per year.</p>
+        <h2 class="section-title">Extending asset life. Cutting waste. Aligned with circular economy.</h2>
+        <p class="section-lead">Preventive maintenance is a circular economy tool — fewer replacements, less aluminium and steel consumed, and a measurably smaller carbon footprint per escalator.</p>
         <div class="sdg-row">
           <div class="sdg-badge sdg12"><span class="num">12</span> Responsible Consumption</div>
           <div class="sdg-badge sdg13"><span class="num">13</span> Climate Action</div>
@@ -406,12 +421,12 @@
         <div class="card" style="--ac:#4ADE80">
           <span class="card-icon">♻️</span>
           <div class="card-title">Reduction in material waste</div>
-          <p class="card-body">Preventive maintenance helps exceed the lifetime of escalator components — particularly steps and tread surfaces — reducing the likelihood of a full replacement. This is directly aligned with <strong>SDG 12</strong> (Responsible Consumption and Production) and contributes to Germany's National Circular Economy Strategy (NCES, BMUKN, 2024). Each escalator step requires significant quantities of aluminium or steel; extending their lifespan through early damage detection reduces material waste at scale.</p>
+          <p class="card-body">Preventive maintenance helps extend the lifetime of escalator components — particularly steps and tread surfaces — reducing the likelihood of a full replacement cycle.</p>
         </div>
         <div class="card" style="--ac:#4ADE80">
           <span class="card-icon">📊</span>
           <div class="card-title">Tracking &amp; reporting our carbon footprint</div>
-          <p class="card-body">Cboost should be transparent in reporting its environmental impact in order to maintain ecological credibility. By preventing sudden shutdowns and the resulting need for step replacements, the environmental savings should be actively tracked and registered to create <strong>environmental impact reports</strong> for customers — and for Cboost itself — to demonstrate ecological legitimacy, directly supporting <strong>SDG 13</strong> (Climate Action).</p>
+          <p class="card-body">Cboost maintains transparency in reporting its environmental impact to maintain ecological credibility. By preventing sudden shutdowns, we reduce emergency response emissions.</p>
         </div>
         <div class="sdg-row" style="margin-top:4px">
           <div class="sdg-badge sdg11"><span class="num">11</span> Sustainable Cities</div>
@@ -436,7 +451,7 @@
           <div class="sdg-badge sdg17"><span class="num">17</span> Partnerships for the Goals</div>
         </div>
         <div class="quote">
-          A <strong>Level 4 alert</strong> will result in an escalator shutdown to prevent total collapse — but the system will only ever <em>suggest</em> action. <strong>Human intervention</strong> is always required to act on it.
+          A <strong>Level 4 alert</strong> will result in an escalator shutdown to prevent total collapse — but the system will only ever <em>suggest</em> action. <strong>Human intervention always has the final say.</strong>
         </div>
       </div>
       <div class="timeline reveal">
@@ -444,28 +459,28 @@
           <div class="tl-dot">🤖</div>
           <div class="tl-body">
             <h4>Transparency &amp; accountability in AI decision-making</h4>
-            <p>The four-level alarm system StepGuard uses has real operational consequences. A Level 4 alert will result in an escalator shutdown to prevent total mechanical failure, meaning the AI contributes to a safety-critical function and must comply with the EU AI Act. Crucially, the system will only <em>suggest</em> action — it requires human intervention to actually stop the escalator. This protects StepGuard from liability in the event of false alerts and maintains operator trust by keeping them in control at all times.</p>
+            <p>The four-level alarm system StepGuard uses has real operational consequences. A Level 4 alert will result in an escalator shutdown to prevent total mechanical failure, meaning the system requires full explainability.</p>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot">📋</div>
           <div class="tl-body">
             <h4>EU AI Act compliance — January 2027</h4>
-            <p>Because StepGuard's AI vision component contributes to a safety-critical function in public infrastructure, it must be assessed by a notified body before the EU AI Act's January 2027 deadline. Cboost is committed to completing this assessment proactively to ensure the decision logic is fully auditable and all deployment documentation meets regulatory standards across every market it enters.</p>
+            <p>Because StepGuard's AI vision component contributes to a safety-critical function in public infrastructure, it must be assessed by a notified body before the EU AI Act's January 2027 deadline.</p>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot">🏢</div>
           <div class="tl-body">
             <h4>Ethical responsibility to the maintenance workforce</h4>
-            <p>StepGuard does not aim to eliminate reactive maintenance jobs — it improves them. Shifting from dangerous emergency call-outs to planned predictive maintenance gives technicians safer and more structured working conditions. Cboost will engage with German trade unions and position StepGuard as a workforce enablement tool, not a workforce reduction tool.</p>
+            <p>StepGuard does not aim to eliminate reactive maintenance jobs — it improves them. Shifting from dangerous emergency call-outs to planned predictive maintenance gives technicians safer working conditions.</p>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot">🌐</div>
           <div class="tl-body">
             <h4>Responsible global diffusion</h4>
-            <p>As StepGuard expands into further European markets, Cboost commits to applying the same ethical minimum conditions everywhere: human oversight in all AI-triggered actions, transparent impact reporting, full compliance with local data protection law, and meaningful engagement with local maintenance workforces — regardless of how strict local enforcement happens to be.</p>
+            <p>As StepGuard expands into further European markets, Cboost commits to applying the same ethical minimum conditions everywhere: human oversight in all AI-triggered actions, and transparent communication.</p>
           </div>
         </div>
       </div>
@@ -480,7 +495,12 @@
     <div class="footer-grid">
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-          <div class="logo-badge">C</div>
+          <svg style="width:36px;height:36px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,0 30,0 40,15 10,15" fill="#F4D03F"/>
+            <line x1="15" y1="20" x2="0" y2="40" stroke="#FFF" stroke-width="2"/>
+            <line x1="22" y1="20" x2="7" y2="40" stroke="#FFF" stroke-width="2"/>
+            <polygon points="5,42 35,42 35,52 5,52" fill="#FFF"/>
+          </svg>
           <div class="logo-text">C<span style="color:var(--orange)">boost</span> StepGuard</div>
         </div>
         <p>AI-powered escalator damage prevention.<br/>Dutch technology. German market. Global responsibility.</p>
