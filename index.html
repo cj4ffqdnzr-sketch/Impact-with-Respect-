@@ -12,14 +12,11 @@
     --navy2:   #111F30;
     --navy3:   #162842;
     --orange:  #F97316;
-    --orange2: #EA6300;
     --white:   #FFFFFF;
     --grey:    #8A9BB0;
     --light:   #D4DDE8;
     --card-bg: #162234;
     --border:  rgba(249,115,22,0.25);
-
-    /* SDG official colours */
     --sdg9:  #FD6925;
     --sdg11: #FD9D24;
     --sdg12: #BF8B2E;
@@ -27,113 +24,83 @@
     --sdg16: #02558B;
     --sdg17: #19486A;
   }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
   body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
+    background:var(--navy); color:var(--white);
+    font-family:'Inter',sans-serif; font-size:16px; line-height:1.7;
+    overflow-x:hidden;
   }
-
-  /* ── UTILITY ─────────────────────────────────────── */
-  .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
-  .sr-only    { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
-
-  /* ── ANIMATED GRID BG ────────────────────────────── */
+  .container { max-width:1140px; margin:0 auto; padding:0 28px; }
   body::before {
-    content:'';
-    position:fixed; inset:0; z-index:0;
-    background-image:
-      linear-gradient(rgba(249,115,22,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(249,115,22,.05) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events:none;
+    content:''; position:fixed; inset:0; z-index:0;
+    background-image: linear-gradient(rgba(249,115,22,.05) 1px,transparent 1px), linear-gradient(90deg,rgba(249,115,22,.05) 1px,transparent 1px);
+    background-size:48px 48px; pointer-events:none;
   }
 
-  /* ── NAV ─────────────────────────────────────────── */
+  /* NAV */
   nav {
-    position: fixed; top:0; left:0; right:0; z-index:100;
-    background: rgba(11,22,34,.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    height: 64px; display:flex; align-items:center;
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(11,22,34,.92); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border); height:64px;
+    display:flex; align-items:center;
   }
   nav .inner { display:flex; align-items:center; justify-content:space-between; width:100%; }
   .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
   .logo-badge {
     width:36px; height:36px; border-radius:8px;
-    background: linear-gradient(135deg, var(--orange), #c2410c);
+    background:linear-gradient(135deg,var(--orange),#c2410c);
     display:flex; align-items:center; justify-content:center;
     font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; color:#fff;
   }
   .logo-text { font-family:'Rajdhani',sans-serif; font-size:20px; font-weight:700; color:var(--white); letter-spacing:1px; }
   .logo-text span { color:var(--orange); }
-
   nav ul { display:flex; gap:28px; list-style:none; }
   nav a  { color:var(--grey); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:.5px; transition:.2s; }
   nav a:hover { color:var(--orange); }
 
-  /* ── HERO ─────────────────────────────────────────── */
+  /* HERO */
   .hero {
     position:relative; z-index:1;
     min-height:100vh; display:flex; align-items:center;
-    padding: 100px 0 60px;
-    overflow:hidden;
+    padding:100px 0 60px; overflow:hidden;
   }
   .hero::after {
-    content:'';
-    position:absolute; right:-200px; top:50%; transform:translateY(-50%);
+    content:''; position:absolute; right:-200px; top:50%; transform:translateY(-50%);
     width:700px; height:700px; border-radius:50%;
-    background: radial-gradient(circle, rgba(249,115,22,.18) 0%, transparent 70%);
+    background:radial-gradient(circle,rgba(249,115,22,.18) 0%,transparent 70%);
     pointer-events:none;
   }
   .hero-tag {
     display:inline-flex; align-items:center; gap:8px;
     background:rgba(249,115,22,.12); border:1px solid rgba(249,115,22,.3);
     border-radius:100px; padding:6px 16px; font-size:12px; font-weight:600;
-    letter-spacing:1.5px; text-transform:uppercase; color:var(--orange);
-    margin-bottom:28px;
+    letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:28px;
   }
   .hero-tag::before { content:'●'; font-size:8px; animation:blink 1.4s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
-
   .hero h1 {
-    font-family:'Rajdhani',sans-serif;
-    font-size: clamp(40px, 6vw, 76px);
-    font-weight:700; line-height:1.05;
-    letter-spacing:-1px;
-    margin-bottom:20px;
+    font-family:'Rajdhani',sans-serif; font-size:clamp(40px,6vw,76px);
+    font-weight:700; line-height:1.05; letter-spacing:-1px; margin-bottom:20px;
   }
   .hero h1 em { color:var(--orange); font-style:normal; }
-  .hero-sub {
-    font-size:17px; color:var(--grey); max-width:540px; margin-bottom:40px; font-weight:300;
-  }
-
+  .hero-sub { font-size:17px; color:var(--grey); max-width:540px; margin-bottom:40px; font-weight:300; }
   .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px; }
   .pill {
     display:flex; align-items:center; gap:6px;
     padding:7px 14px; border-radius:100px;
-    border:1px solid rgba(255,255,255,.12);
-    font-size:12px; font-weight:500; color:var(--light);
-    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.12); font-size:12px;
+    font-weight:500; color:var(--light); background:rgba(255,255,255,.04);
   }
   .pill .dot { width:8px; height:8px; border-radius:50%; }
 
-  /* ── STAT STRIP ──────────────────────────────────── */
+  /* STATS */
   .stats {
-    position:relative;z-index:1;
-    background: var(--navy2);
-    border-top:1px solid rgba(255,255,255,.06);
-    border-bottom:1px solid rgba(255,255,255,.06);
+    position:relative; z-index:1; background:var(--navy2);
+    border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06);
     padding:36px 0;
   }
-  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); }
   .stat-item { text-align:center; padding:0 20px; position:relative; }
   .stat-item:not(:last-child)::after {
     content:''; position:absolute; right:0; top:20%; height:60%;
@@ -142,39 +109,21 @@
   .stat-num { font-family:'Rajdhani',sans-serif; font-size:40px; font-weight:700; color:var(--orange); display:block; }
   .stat-label { font-size:12px; color:var(--grey); text-transform:uppercase; letter-spacing:1px; }
 
-  /* ── SECTION BASE ─────────────────────────────────── */
+  /* SECTIONS */
   section.impact { position:relative; z-index:1; padding:100px 0; }
   section.impact:nth-child(even) { background:var(--navy2); }
-
-  .section-eyebrow {
-    font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
-    font-weight:600; margin-bottom:12px;
-  }
-  .section-title {
-    font-family:'Rajdhani',sans-serif; font-size:clamp(28px,4vw,44px);
-    font-weight:700; line-height:1.1; margin-bottom:16px;
-  }
+  .section-eyebrow { font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:600; margin-bottom:12px; }
+  .section-title { font-family:'Rajdhani',sans-serif; font-size:clamp(28px,4vw,44px); font-weight:700; line-height:1.1; margin-bottom:16px; }
   .section-lead { font-size:17px; color:var(--grey); max-width:600px; font-weight:300; }
-
-  /* layout: two-col */
   .two-col { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
   .two-col.flip { direction:rtl; }
   .two-col.flip > * { direction:ltr; }
 
-  /* ── SDG BADGES ──────────────────────────────────── */
+  /* SDG */
   .sdg-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
-  .sdg-badge {
-    display:flex; align-items:center; gap:8px;
-    padding:8px 14px; border-radius:8px;
-    font-size:12px; font-weight:600; color:#fff;
-    letter-spacing:.3px;
-  }
-  .sdg-badge .num {
-    font-family:'Rajdhani',sans-serif; font-size:18px; font-weight:700;
-    line-height:1; background:rgba(0,0,0,.2); border-radius:4px;
-    padding:2px 6px;
-  }
-  .sdg9  { background:var(--sdg9);  }
+  .sdg-badge { display:flex; align-items:center; gap:8px; padding:8px 14px; border-radius:8px; font-size:12px; font-weight:600; color:#fff; }
+  .sdg-badge .num { font-family:'Rajdhani',sans-serif; font-size:18px; font-weight:700; background:rgba(0,0,0,.2); border-radius:4px; padding:2px 6px; line-height:1; }
+  .sdg9  { background:var(--sdg9); }
   .sdg11 { background:var(--sdg11); color:#1a1a1a; }
   .sdg11 .num { color:#1a1a1a; }
   .sdg12 { background:var(--sdg12); }
@@ -182,68 +131,75 @@
   .sdg16 { background:var(--sdg16); }
   .sdg17 { background:var(--sdg17); }
 
-  /* ── CARDS ───────────────────────────────────────── */
-  .card-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:4px; }
+  /* CARDS */
+  .card-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   .card {
     background:var(--card-bg); border:1px solid rgba(255,255,255,.07);
     border-radius:14px; padding:24px; position:relative; overflow:hidden;
-    transition: border-color .25s, transform .25s;
+    transition:border-color .25s, transform .25s;
   }
   .card:hover { border-color:rgba(249,115,22,.4); transform:translateY(-3px); }
-  .card::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:3px;
-    background:var(--accent-color,var(--orange));
-  }
+  .card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--ac,var(--orange)); }
   .card-icon { font-size:28px; margin-bottom:12px; display:block; }
   .card-title { font-family:'Rajdhani',sans-serif; font-size:18px; font-weight:700; margin-bottom:8px; }
   .card-body  { font-size:14px; color:var(--grey); line-height:1.65; }
 
-  /* ── VISUAL PANEL (left icon column) ──────────────── */
+  /* VIS PANEL */
   .vis-panel {
     background:var(--card-bg); border:1px solid rgba(255,255,255,.07);
-    border-radius:20px; padding:40px 32px;
-    display:flex; flex-direction:column; gap:24px;
+    border-radius:20px; padding:36px 30px;
+    display:flex; flex-direction:column; gap:28px;
   }
   .vis-row { display:flex; gap:16px; align-items:flex-start; }
-  .vis-icon {
-    flex-shrink:0; width:48px; height:48px; border-radius:12px;
-    display:flex; align-items:center; justify-content:center; font-size:22px;
-  }
-  .vis-text h4 { font-family:'Rajdhani',sans-serif; font-size:17px; font-weight:700; margin-bottom:4px; }
-  .vis-text p  { font-size:13px; color:var(--grey); line-height:1.6; }
+  .vis-icon { flex-shrink:0; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; }
+  .vis-text h4 { font-family:'Rajdhani',sans-serif; font-size:17px; font-weight:700; margin-bottom:6px; }
+  .vis-text p  { font-size:13px; color:var(--grey); line-height:1.65; }
 
-  /* ── QUOTE BLOCK ─────────────────────────────────── */
+  /* QUOTE */
   .quote {
-    margin-top:32px;
-    border-left:3px solid var(--orange);
-    padding:16px 20px;
-    background:rgba(249,115,22,.06);
-    border-radius:0 8px 8px 0;
-    font-size:14px; color:var(--light); font-style:italic;
+    margin-top:32px; border-left:3px solid var(--orange);
+    padding:16px 20px; background:rgba(249,115,22,.06);
+    border-radius:0 8px 8px 0; font-size:14px; color:var(--light); font-style:italic;
   }
 
-  /* ── TIMELINE (ethical) ─────────────────────────── */
-  .timeline { display:flex; flex-direction:column; gap:0; }
-  .tl-item { display:flex; gap:20px; padding-bottom:28px; position:relative; }
+  /* CO2 BOX */
+  .co2-box { margin-top:28px; background:rgba(74,222,128,.07); border:1px solid rgba(74,222,128,.2); border-radius:14px; padding:24px; }
+  .co2-label-row { font-family:'Rajdhani',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#4ADE80; margin-bottom:16px; }
+  .co2-calc { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; text-align:center; align-items:center; margin-bottom:20px; }
+  .co2-num { font-family:'Rajdhani',sans-serif; font-size:32px; font-weight:700; color:#4ADE80; line-height:1; }
+  .co2-sub { font-size:11px; color:var(--grey); margin-top:5px; line-height:1.5; }
+  .co2-op { font-size:26px; color:rgba(255,255,255,.2); }
+  .co2-result { border-top:1px solid rgba(74,222,128,.15); padding-top:16px; text-align:center; }
+  .co2-big { font-family:'Rajdhani',sans-serif; font-size:40px; font-weight:700; color:#4ADE80; }
+  .co2-caption { font-size:12px; color:var(--grey); margin-top:6px; line-height:1.6; }
+
+  /* TIMELINE */
+  .timeline { display:flex; flex-direction:column; }
+  .tl-item { display:flex; gap:20px; padding-bottom:32px; position:relative; }
   .tl-item:not(:last-child)::before {
     content:''; position:absolute; left:19px; top:40px; bottom:0;
     width:2px; background:rgba(249,115,22,.2);
   }
   .tl-dot {
     flex-shrink:0; width:40px; height:40px; border-radius:50%;
-    border:2px solid var(--orange);
-    display:flex; align-items:center; justify-content:center;
-    background:rgba(249,115,22,.12); font-size:16px;
+    border:2px solid var(--orange); display:flex; align-items:center;
+    justify-content:center; background:rgba(249,115,22,.12); font-size:16px;
   }
-  .tl-body h4 { font-family:'Rajdhani',sans-serif; font-size:17px; font-weight:700; margin-bottom:4px; padding-top:6px; }
-  .tl-body p  { font-size:13px; color:var(--grey); line-height:1.6; }
+  .tl-body h4 { font-family:'Rajdhani',sans-serif; font-size:17px; font-weight:700; margin-bottom:6px; padding-top:6px; }
+  .tl-body p  { font-size:13px; color:var(--grey); line-height:1.65; }
 
-  /* ── FOOTER ──────────────────────────────────────── */
-  footer {
-    position:relative;z-index:1;
-    background:var(--navy); border-top:1px solid rgba(255,255,255,.06);
-    padding:48px 0 32px;
-  }
+  /* DIVIDER */
+  .divider { display:flex; align-items:center; gap:16px; margin-bottom:56px; }
+  .divider-line { flex:1; height:1px; background:rgba(255,255,255,.07); }
+  .divider-icon { font-size:22px; }
+  .hl { color:var(--orange); font-weight:700; }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+
+  /* FOOTER */
+  footer { position:relative; z-index:1; background:var(--navy); border-top:1px solid rgba(255,255,255,.06); padding:48px 0 32px; }
   .footer-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
   footer h5 { font-family:'Rajdhani',sans-serif; font-size:14px; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
   footer p, footer a { font-size:13px; color:var(--grey); text-decoration:none; display:block; line-height:1.8; }
@@ -251,24 +207,13 @@
   .footer-bottom { border-top:1px solid rgba(255,255,255,.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; }
   .footer-bottom span { font-size:12px; color:var(--grey); }
 
-  /* ── SECTION DIVIDER ─────────────────────────────── */
-  .divider { display:flex; align-items:center; gap:16px; margin-bottom:56px; }
-  .divider-line { flex:1; height:1px; background:rgba(255,255,255,.07); }
-  .divider-icon { font-size:22px; }
-
-  /* ── HIGHLIGHT NUMBERS ─────────────────────────── */
-  .hl { color:var(--orange); font-weight:700; }
-
-  /* ── SCROLL REVEAL ──────────────────────────────── */
-  .reveal { opacity:0; transform:translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-  .reveal.visible { opacity:1; transform:none; }
-
-  /* ── RESPONSIVE ──────────────────────────────────── */
   @media(max-width:768px){
     .two-col, .card-grid, .stats-grid, .footer-grid { grid-template-columns:1fr; }
     .two-col.flip { direction:ltr; }
     .stat-item::after { display:none; }
     nav ul { display:none; }
+    .co2-calc { grid-template-columns:1fr; }
+    .co2-op { display:none; }
   }
 </style>
 </head>
@@ -304,6 +249,7 @@
       <div class="pill"><span class="dot" style="background:var(--sdg11)"></span> SDG 11 · Sustainable Cities</div>
       <div class="pill"><span class="dot" style="background:var(--sdg12)"></span> SDG 12 · Responsible Consumption</div>
       <div class="pill"><span class="dot" style="background:var(--sdg13)"></span> SDG 13 · Climate Action</div>
+      <div class="pill"><span class="dot" style="background:var(--sdg16)"></span> SDG 16 · Justice &amp; Institutions</div>
     </div>
   </div>
 </section>
@@ -313,7 +259,7 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <span class="stat-num">37,455</span>
+        <span class="stat-num" id="s1">37,455</span>
         <span class="stat-label">Escalators in Germany</span>
       </div>
       <div class="stat-item">
@@ -321,34 +267,29 @@
         <span class="stat-label">Avg. emergency repair cost</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">2–5×</span>
-        <span class="stat-label">Longer component lifespan</span>
+        <span class="stat-num" id="s2">220kg</span>
+        <span class="stat-label">CO₂ per step replaced</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">43%</span>
+        <span class="stat-num" id="s3">43%</span>
         <span class="stat-label">German firms prioritise predictive AI</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- 1. ECONOMIC                                -->
-<!-- ══════════════════════════════════════════ -->
+
+<!-- ═══════════════════ 1. ECONOMIC ═══════════════════ -->
 <section class="impact" id="economic">
   <div class="container">
-    <div class="divider reveal">
-      <div class="divider-line"></div>
-      <div class="divider-icon">💰</div>
-      <div class="divider-line"></div>
-    </div>
+    <div class="divider reveal"><div class="divider-line"></div><div class="divider-icon">💰</div><div class="divider-line"></div></div>
     <div class="two-col">
       <div class="reveal">
         <div class="section-eyebrow" style="color:var(--orange)">01 — Economic Impact</div>
         <h2 class="section-title">Strengthening the local economy &amp; reshaping competition</h2>
         <p class="section-lead">StepGuard's predictive model generates direct savings for operators, restructures the German maintenance market, and seeds local job creation.</p>
         <div class="sdg-row">
-          <div class="sdg-badge sdg9">  <span class="num">9</span>  Industry, Innovation &amp; Infrastructure</div>
+          <div class="sdg-badge sdg9"><span class="num">9</span> Industry, Innovation &amp; Infrastructure</div>
           <div class="sdg-badge sdg11"><span class="num">11</span> Sustainable Cities</div>
         </div>
         <div class="quote">
@@ -356,52 +297,47 @@
           StepGuard's ROI is realised from the very first prevented breakdown."
         </div>
       </div>
-      <div class="reveal card-grid" style="--accent-color:var(--orange)">
-        <div class="card">
+      <div class="card-grid reveal">
+        <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">🏗️</span>
           <div class="card-title">Savings for operators</div>
-          <p class="card-body">Public transport operators, airports and shopping centres benefit from lower downtime costs and fewer emergency call-outs — reinvestable directly into local transport infrastructure.</p>
+          <p class="card-body">Public transport operators, airports and shopping centres benefit from lower downtime costs and fewer emergency call-outs — savings reinvestable directly into local transport infrastructure.</p>
         </div>
-        <div class="card">
+        <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">⚙️</span>
           <div class="card-title">OEM market disruption</div>
           <p class="card-body">Dominant OEMs (Schindler, KONE, ThyssenKrupp) earn large revenues from reactive maintenance. StepGuard compresses that cycle, incentivising the entire sector to innovate toward preventive models.</p>
         </div>
-        <div class="card">
+        <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">🏭</span>
           <div class="card-title">Local supply chain</div>
           <p class="card-body">StepGuard uses IDS cameras produced in Obersulm, Germany — directly supporting domestic hardware manufacturing and strengthening the German industrial supply chain.</p>
         </div>
-        <div class="card">
+        <div class="card" style="--ac:var(--orange)">
           <span class="card-icon">👷</span>
           <div class="card-title">Job creation</div>
-          <p class="card-body">Phase 3 scale-up will require a German service centre, generating direct local employment. Indirect effects include demand for data-literate maintenance technicians across the sector.</p>
+          <p class="card-body">Phase 3 scale-up will require a German service centre, generating direct local employment. Indirect effects include growing demand for data-literate maintenance technicians across the sector.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- 2. SOCIAL                                  -->
-<!-- ══════════════════════════════════════════ -->
+
+<!-- ═══════════════════ 2. SOCIAL ═══════════════════ -->
 <section class="impact" id="social">
   <div class="container">
-    <div class="divider reveal">
-      <div class="divider-line"></div>
-      <div class="divider-icon">🤝</div>
-      <div class="divider-line"></div>
-    </div>
+    <div class="divider reveal"><div class="divider-line"></div><div class="divider-icon">🤝</div><div class="divider-line"></div></div>
     <div class="two-col flip">
       <div class="reveal">
         <div class="section-eyebrow" style="color:#60A5FA">02 — Social Impact</div>
         <h2 class="section-title">Safer cities. Fairer workplaces. Inclusive infrastructure.</h2>
-        <p class="section-lead">Escalator reliability is a public safety issue — especially for elderly and mobility-impaired users. StepGuard creates measurable social value at scale.</p>
+        <p class="section-lead">Escalators are a critical infrastructure need for elderly and mobility-impaired users. StepGuard's predictive model directly improves public safety and accessibility across Germany.</p>
         <div class="sdg-row">
           <div class="sdg-badge sdg11"><span class="num">11</span> Sustainable Cities &amp; Communities</div>
         </div>
         <div class="quote">
-          On <strong>12 March 2026</strong>, over 50 escalators broke down simultaneously at Berlin Central Station — directly impacting thousands of commuters, wheelchair users and people with reduced mobility. <em>(Euronews, 2026)</em>
+          On <strong>12 March 2026</strong>, over <strong>50 escalators</strong> broke down simultaneously at Berlin Central Station — a direct impact on thousands of commuters, wheelchair users and people with reduced mobility. <em>(Euronews, 2026)</em>
         </div>
       </div>
       <div class="vis-panel reveal">
@@ -409,28 +345,21 @@
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">♿</div>
           <div class="vis-text">
             <h4>Public safety &amp; accessibility</h4>
-            <p>Fewer unplanned shutdowns directly improve access for elderly and mobility-impaired passengers in metro stations, airports and shopping centres across Germany.</p>
+            <p>Escalators are critical infrastructure for elderly and mobility-impaired users in metro stations and shopping centres. However, escalator reliability in Germany is currently below the standard level. StepGuard's predictive maintenance model directly and positively impacts public safety and accessibility for a large number of users — preventing the kind of simultaneous failures that took Berlin Central Station offline in March 2026.</p>
           </div>
         </div>
         <div class="vis-row">
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">🔧</div>
           <div class="vis-text">
-            <h4>Workforce transitions</h4>
-            <p>Predictive maintenance shifts work away from dangerous emergency repairs. Cboost engages proactively with German trade unions, positioning StepGuard as a tool that improves working conditions — not eliminates jobs.</p>
+            <h4>Impact for maintenance technicians</h4>
+            <p>With StepGuard, the role of maintenance technicians is helped tremendously — shifting from reactive emergency work to planned predictive maintenance. The system also creates demand for data-literate maintenance professionals who can interpret AI-generated alerts. StepGuard should engage with German trade unions and position itself as a tool that improves working conditions by providing quicker insights into the causes of malfunctions.</p>
           </div>
         </div>
         <div class="vis-row">
           <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">🔍</div>
           <div class="vis-text">
-            <h4>Explainable AI for all</h4>
-            <p>The alarm platform is designed for transparency: operators understand <em>why</em> a warning is triggered. This builds public trust in AI-powered infrastructure and democratises access to advanced monitoring technology.</p>
-          </div>
-        </div>
-        <div class="vis-row">
-          <div class="vis-icon" style="background:rgba(96,165,250,.15);color:#60A5FA">🇩🇪</div>
-          <div class="vis-text">
-            <h4>Cultural localisation</h4>
-            <p>Full German-language platform, manuals and CE documentation address Germany's high uncertainty avoidance score (65, Hofstede) — reducing barriers and building operator confidence.</p>
+            <h4>Digital inclusion</h4>
+            <p>Because StepGuard will be used by large public transport operators, the technology needs to be understandable in order to maintain social legitimacy. The platform is therefore designed in a transparent and explainable way so that operators understand <em>why</em> the system triggers an alert — not only that it does. This builds public trust in an increasingly AI-powered infrastructure.</p>
           </div>
         </div>
       </div>
@@ -438,51 +367,53 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- 3. ECOLOGICAL                              -->
-<!-- ══════════════════════════════════════════ -->
+
+<!-- ═══════════════════ 3. ECOLOGICAL ═══════════════════ -->
 <section class="impact" id="ecological">
   <div class="container">
-    <div class="divider reveal">
-      <div class="divider-line"></div>
-      <div class="divider-icon">🌿</div>
-      <div class="divider-line"></div>
-    </div>
+    <div class="divider reveal"><div class="divider-line"></div><div class="divider-icon">🌿</div><div class="divider-line"></div></div>
     <div class="two-col">
       <div class="reveal">
         <div class="section-eyebrow" style="color:#4ADE80">03 — Ecological Impact</div>
         <h2 class="section-title">Extending asset life. Cutting waste. Aligned with NCES.</h2>
-        <p class="section-lead">Preventive maintenance is a circular economy tool — fewer replacements, less metal and rubber waste, a smaller carbon footprint.</p>
+        <p class="section-lead">Preventive maintenance is a circular economy tool — fewer replacements, less aluminium and steel consumed, and a measurably smaller carbon footprint per escalator, per year.</p>
         <div class="sdg-row">
           <div class="sdg-badge sdg12"><span class="num">12</span> Responsible Consumption</div>
           <div class="sdg-badge sdg13"><span class="num">13</span> Climate Action</div>
-          <div class="sdg-badge sdg9"> <span class="num">9</span>  Industry &amp; Innovation</div>
+          <div class="sdg-badge sdg9"><span class="num">9</span> Industry &amp; Innovation</div>
+        </div>
+        <!-- CO2 calculator -->
+        <div class="co2-box">
+          <div class="co2-label-row">Carbon cost per escalator step replaced</div>
+          <div class="co2-calc">
+            <div>
+              <div class="co2-num">14.8<span style="font-size:15px">kg</span></div>
+              <div class="co2-sub">CO₂ per kg of aluminium<br/>produced (Borenius, 2026)</div>
+            </div>
+            <div class="co2-op">×</div>
+            <div>
+              <div class="co2-num">15<span style="font-size:15px">kg</span></div>
+              <div class="co2-sub">Weight of a standard<br/>1,000 mm escalator step</div>
+            </div>
+          </div>
+          <div class="co2-result">
+            <div class="co2-big">≈ 220 kg CO₂</div>
+            <div class="co2-caption">emitted per single step replaced — multiply that across an entire escalator flight and the ecological case for prevention becomes undeniable.</div>
+          </div>
         </div>
       </div>
-      <div class="reveal">
-        <div class="card-grid" style="--accent-color:#4ADE80">
-          <div class="card" style="--accent-color:#4ADE80">
-            <span class="card-icon">♻️</span>
-            <div class="card-title">Material waste reduction</div>
-            <p class="card-body">Early damage detection extends escalator tread life by <span class="hl">2–5×</span>, dramatically reducing the volume of metal and rubber components discarded. Directly aligned with SDG 12 and Germany's National Circular Economy Strategy (NCES). <em>(BMUKN, 2024)</em></p>
-          </div>
-          <div class="card" style="--accent-color:#4ADE80">
-            <span class="card-icon">⚡</span>
-            <div class="card-title">Energy efficiency</div>
-            <p class="card-body">Unplanned shutdowns and restarts consume disproportionate energy. Across <span class="hl">37,455</span> German escalators, optimised maintenance cycles produce a measurable reduction in operational energy draw.</p>
-          </div>
-          <div class="card" style="--accent-color:#4ADE80">
-            <span class="card-icon">🌍</span>
-            <div class="card-title">Our own footprint</div>
-            <p class="card-body">Cboost commits to carbon-neutral shipping for the German pilot phase and prioritises energy-efficient cloud infrastructure hosted in Germany using renewable energy sources — walking the talk on SDG 13.</p>
-          </div>
-          <div class="card" style="--accent-color:#4ADE80">
-            <span class="card-icon">🏙️</span>
-            <div class="card-title">Sustainable cities</div>
-            <p class="card-body">More reliable urban transport infrastructure reduces passenger reliance on road alternatives, contributing to lower urban emissions and more liveable, accessible cities aligned with SDG 11.</p>
-          </div>
+      <div class="reveal" style="display:flex;flex-direction:column;gap:16px">
+        <div class="card" style="--ac:#4ADE80">
+          <span class="card-icon">♻️</span>
+          <div class="card-title">Reduction in material waste</div>
+          <p class="card-body">Preventive maintenance helps exceed the lifetime of escalator components — particularly steps and tread surfaces — reducing the likelihood of a full replacement. This is directly aligned with <strong>SDG 12</strong> (Responsible Consumption and Production) and contributes to Germany's National Circular Economy Strategy (NCES, BMUKN, 2024). Each escalator step requires significant quantities of aluminium or steel; extending their lifespan through early damage detection reduces material waste at scale.</p>
         </div>
-        <div class="sdg-row" style="margin-top:20px">
+        <div class="card" style="--ac:#4ADE80">
+          <span class="card-icon">📊</span>
+          <div class="card-title">Tracking &amp; reporting our carbon footprint</div>
+          <p class="card-body">Cboost should be transparent in reporting its environmental impact in order to maintain ecological credibility. By preventing sudden shutdowns and the resulting need for step replacements, the environmental savings should be actively tracked and registered to create <strong>environmental impact reports</strong> for customers — and for Cboost itself — to demonstrate ecological legitimacy, directly supporting <strong>SDG 13</strong> (Climate Action).</p>
+        </div>
+        <div class="sdg-row" style="margin-top:4px">
           <div class="sdg-badge sdg11"><span class="num">11</span> Sustainable Cities</div>
         </div>
       </div>
@@ -490,56 +421,51 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- 4. ETHICAL                                 -->
-<!-- ══════════════════════════════════════════ -->
+
+<!-- ═══════════════════ 4. ETHICAL ═══════════════════ -->
 <section class="impact" id="ethical">
   <div class="container">
-    <div class="divider reveal">
-      <div class="divider-line"></div>
-      <div class="divider-icon">⚖️</div>
-      <div class="divider-line"></div>
-    </div>
+    <div class="divider reveal"><div class="divider-line"></div><div class="divider-icon">⚖️</div><div class="divider-line"></div></div>
     <div class="two-col flip">
       <div class="reveal">
         <div class="section-eyebrow" style="color:#C084FC">04 — Ethical Impact</div>
-        <h2 class="section-title">Responsible AI. Accountable diffusion. Global principles.</h2>
-        <p class="section-lead">From GDPR compliance to global expansion ethics, StepGuard is built on the principle that technology must earn trust — not assume it.</p>
+        <h2 class="section-title">Responsible AI. Human oversight. Accountable by design.</h2>
+        <p class="section-lead">StepGuard's four-level alarm system has real operational consequences. That is why accountability and human control are foundational design requirements — not afterthoughts.</p>
         <div class="sdg-row">
           <div class="sdg-badge sdg16"><span class="num">16</span> Peace, Justice &amp; Strong Institutions</div>
           <div class="sdg-badge sdg17"><span class="num">17</span> Partnerships for the Goals</div>
         </div>
         <div class="quote">
-          <span class="hl">85%</span> of German companies identify data protection as their top concern in AI adoption — which is why privacy-by-design is non-negotiable for StepGuard. <em>(Statista, 2024)</em>
+          A <strong>Level 4 alert</strong> will result in an escalator shutdown to prevent total collapse — but the system will only ever <em>suggest</em> action. <strong>Human intervention</strong> is always required to act on it.
         </div>
       </div>
       <div class="timeline reveal">
         <div class="tl-item">
-          <div class="tl-dot">🔒</div>
+          <div class="tl-dot">🤖</div>
           <div class="tl-body">
-            <h4>Privacy by design — GDPR &amp; BDSG</h4>
-            <p>StepGuard cameras monitor mechanical components only. A public-facing data processing statement and an independent GDPR audit are completed before any German deployment. No personal data is collected, processed or retained — ever.</p>
+            <h4>Transparency &amp; accountability in AI decision-making</h4>
+            <p>The four-level alarm system StepGuard uses has real operational consequences. A Level 4 alert will result in an escalator shutdown to prevent total mechanical failure, meaning the AI contributes to a safety-critical function and must comply with the EU AI Act. Crucially, the system will only <em>suggest</em> action — it requires human intervention to actually stop the escalator. This protects StepGuard from liability in the event of false alerts and maintains operator trust by keeping them in control at all times.</p>
           </div>
         </div>
         <div class="tl-item">
-          <div class="tl-dot">🤖</div>
+          <div class="tl-dot">📋</div>
           <div class="tl-body">
-            <h4>Human oversight in AI decisions</h4>
-            <p>The four-level alarm system recommends action — it does not autonomously enforce escalator shutdowns without operator confirmation. Auditability and human oversight are foundational design requirements, aligned with the EU AI Act's notified body assessment from January 2027.</p>
+            <h4>EU AI Act compliance — January 2027</h4>
+            <p>Because StepGuard's AI vision component contributes to a safety-critical function in public infrastructure, it must be assessed by a notified body before the EU AI Act's January 2027 deadline. Cboost is committed to completing this assessment proactively to ensure the decision logic is fully auditable and all deployment documentation meets regulatory standards across every market it enters.</p>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot">🏢</div>
           <div class="tl-body">
-            <h4>Ethical competitive displacement</h4>
-            <p>StepGuard does not aim to eliminate the reactive maintenance workforce. Cboost actively supports operators in managing workforce reskilling — and frames its messaging around improving safety conditions, not purely reducing labour costs.</p>
+            <h4>Ethical responsibility to the maintenance workforce</h4>
+            <p>StepGuard does not aim to eliminate reactive maintenance jobs — it improves them. Shifting from dangerous emergency call-outs to planned predictive maintenance gives technicians safer and more structured working conditions. Cboost will engage with German trade unions and position StepGuard as a workforce enablement tool, not a workforce reduction tool.</p>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot">🌐</div>
           <div class="tl-body">
             <h4>Responsible global diffusion</h4>
-            <p>As StepGuard expands into new European markets, Cboost commits to ethical minimum conditions in all regions: mandatory operator engagement with maintenance workforces and full compliance with local data protection law — not just where enforcement is strict.</p>
+            <p>As StepGuard expands into further European markets, Cboost commits to applying the same ethical minimum conditions everywhere: human oversight in all AI-triggered actions, transparent impact reporting, full compliance with local data protection law, and meaningful engagement with local maintenance workforces — regardless of how strict local enforcement happens to be.</p>
           </div>
         </div>
       </div>
@@ -547,12 +473,13 @@
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="logo" style="margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
           <div class="logo-badge">C</div>
           <div class="logo-text">C<span style="color:var(--orange)">boost</span> StepGuard</div>
         </div>
@@ -564,66 +491,56 @@
         <a href="tel:+31852082028">+31 (0)85 208 2028</a>
         <p>Slingerweg 7D, Breda</p>
         <p>Fornheselaan 118, Den Dolder</p>
+        <a href="https://cboost.nl" style="color:var(--orange);margin-top:6px">cboost.nl</a>
       </div>
       <div>
         <h5>SDG Alignment</h5>
         <div class="sdg-row" style="margin-top:0">
-          <div class="sdg-badge sdg9"  style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px">9</span>  Industry</div>
-          <div class="sdg-badge sdg11" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px;color:#1a1a1a">11</span> Cities</div>
-          <div class="sdg-badge sdg12" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px">12</span> Consumption</div>
-          <div class="sdg-badge sdg13" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px">13</span> Climate</div>
-          <div class="sdg-badge sdg16" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px">16</span> Justice</div>
-          <div class="sdg-badge sdg17" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:15px">17</span> Partnerships</div>
+          <div class="sdg-badge sdg9"  style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px">9</span> Industry</div>
+          <div class="sdg-badge sdg11" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px;color:#1a1a1a">11</span> Cities</div>
+          <div class="sdg-badge sdg12" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px">12</span> Consumption</div>
+          <div class="sdg-badge sdg13" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px">13</span> Climate</div>
+          <div class="sdg-badge sdg16" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px">16</span> Justice</div>
+          <div class="sdg-badge sdg17" style="font-size:11px;padding:5px 10px"><span class="num" style="font-size:14px">17</span> Partnerships</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 C-boost Group Holding B.V. — Patent Pending</span>
-      <a href="https://cboost.nl" style="color:var(--orange);font-size:13px">cboost.nl</a>
+      <span>Impact with Respect — StepGuard German Market Entry</span>
     </div>
   </div>
 </footer>
 
 <script>
   // Scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io  = new IntersectionObserver(entries => {
+  const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold:.12 });
-  els.forEach(el => io.observe(el));
+  }, { threshold:.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Animated counters in stat strip
-  function animateNum(el, target, suffix=''){
-    let start=0, dur=1800, t0=null;
-    const isFloat = String(target).includes('.');
+  // Animated counters
+  function count(el, target, suffix, dec=0){
+    let t0=null, dur=1800;
     function step(t){
       if(!t0) t0=t;
-      const p=Math.min((t-t0)/dur,1);
-      const ease=1-Math.pow(1-p,3);
-      const v=target*ease;
-      el.textContent = isFloat ? v.toFixed(1)+suffix : Math.round(v).toLocaleString()+suffix;
-      if(p<1) requestAnimationFrame(step);
+      const ease = 1 - Math.pow(1 - Math.min((t-t0)/dur,1), 3);
+      el.textContent = (target*ease).toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',') + suffix;
+      if(ease<1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-
-  const statNums = document.querySelectorAll('.stat-num');
-  const data = [
-    {val:37455, suffix:''},
-    {val:80,    suffix:'K'},
-    {val:2,     suffix:'–5×'},
-    {val:43,    suffix:'%'},
-  ];
-  const sio = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        const i=[...statNums].indexOf(e.target);
-        if(i>=0 && data[i].suffix!=='–5×') animateNum(e.target, data[i].val, data[i].suffix);
-        sio.unobserve(e.target);
-      }
+  const sio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const id = e.target.id;
+      if(id==='s1') count(e.target, 37455, '');
+      if(id==='s2') count(e.target, 220, 'kg');
+      if(id==='s3') count(e.target, 43, '%');
+      sio.unobserve(e.target);
     });
-  },{threshold:.5});
-  statNums.forEach(el=>sio.observe(el));
+  }, { threshold:.5 });
+  ['s1','s2','s3'].forEach(id => { const el=document.getElementById(id); if(el) sio.observe(el); });
 </script>
 </body>
 </html>
